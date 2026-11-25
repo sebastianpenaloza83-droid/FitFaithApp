@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.FitFaithApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Color principal de acento (Azul Fit Faith) -->
+        <item name="colorPrimary">@color/fit_primary_blue</item>
+        <item name="colorSecondary">@color/fit_silver</item>
+        <!-- Color de fondo general de la app -->
+        <item name="android:windowBackground">@color/fit_dark_background</item>
+    </style>
+</resources>

@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fit_dark_background"
+    android:padding="20dp">
+
+    <!-- Barra de progreso superior fija -->
+    <ProgressBar
+        android:id="@+id/progressBarCuestionario"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:max="100"
+        android:progress="16"
+        android:progressTint="@color/fit_primary_blue"
+        android:progressBackgroundTint="@color/fit_card_background" />
+
+    <ViewFlipper
+        android:id="@+id/viewFlipperCuestionario"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
+
+        <!-- ========================================= -->
+        <!-- PASO 1: OBJETIVO                          -->
+        <!-- ========================================= -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mi objetivo es:"
+                    android:textColor="@color/fit_white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="24dp" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardPerderPeso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:cardBackgroundColor="@color/fit_card_background"
+                    app:cardCornerRadius="12dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="22dp"
+                        android:text="Perder peso"
+                        android:textColor="@color/fit_silver"
+                        android:textSize="16sp" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardMejorarForma"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:cardBackgroundColor="@color/fit_card_background"
+                    app:cardCornerRadius="12dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="22dp"
+                        android:text="Mejorar la forma física y la calidad de vida."
+                        android:textColor="@color/fit_silver"
+                        android:textSize="16sp" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardGanarMasa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/fit_card_background"
+                    app:cardCornerRadius="12dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="22dp"
+                        android:text="Ganar masa muscular"
+                        android:textColor="@color/fit_silver"
+                        android:textSize="16sp" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- ========================================= -->
+        <!-- PASO 2: HISTORIAL (ÚLTIMOS 4 MESES)       -->
+        <!-- ========================================= -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Durante los últimos 4 meses, yo:"
+                    android:textColor="@color/fit_white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="24dp" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardNoEntrene"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:cardBackgroundColor="@color/fit_card_background"
+                    app:cardCornerRadius="12dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:text="No entrené"
+                        android:textColor="@color/fit_silver"
+                        android:textSize="16sp" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardEntrene1x"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:cardBackgroundColor="@color/fit_card_background"
+                    app:cardCornerRadius="12dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:text="Entrené 1x a la semana"
+                        android:textColor="@color/fit_silver"
+                        android:textSize="16sp" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardEntrene2a3x"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:cardBackgroundColor="@color/fit_card_background"
+                    app:cardCornerRadius="12dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:text="Entrené de 2x a 3x a la semana"
+                        android:textColor="@color/fit_silver"
+                        android:textSize="16sp" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardEntrene4xMas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/fit_card_background"
+                    app:cardCornerRadius="12dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:text="Entrené 4x o más a la semana"
+                        android:textColor="@color/fit_silver"
+                        android:textSize="16sp" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- ========================================= -->
+        <!-- PASO 3: HORARIOS DE ENTRENAMIENTO         -->
+        <!-- ========================================= -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="¿A qué horas piensas ir a entrenar la mayoría de los días?"
+                        android:textColor="@color/fit_white"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="20dp" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupHorarios"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:singleSelection="true"
+                        app:chipSpacingVertical="8dp">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipHora1"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ANTES DE LAS 8:00"
+                            android:textColor="@color/fit_silver"
+                            app:chipBackgroundColor="@color/fit_card_background" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipHora2"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ENTRE 8:00 Y 11:00"
+                            android:textColor="@color/fit_silver"
+                            app:chipBackgroundColor="@color/fit_card_background" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipHora3"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ENTRE 11:00 Y 14:00"
+                            android:textColor="@color/fit_silver"
+                            app:chipBackgroundColor="@color/fit_card_background" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipHora4"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ENTRE 14:00 Y 17:00"
+                            android:textColor="@color/fit_silver"
+                            app:chipBackgroundColor="@color/fit_card_background" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipHora5"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ENTRE 17:00 Y 19:00"
+                            android:textColor="@color/fit_silver"
+                            app:chipBackgroundColor="@color/fit_card_background" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipHora6"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ENTRE 19:00 Y 21:00"
+                            android:textColor="@color/fit_silver"
+                            app:chipBackgroundColor="@color/fit_card_background" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipHora7"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="DESPUÉS DE LAS 21:00"
+                            android:textColor="@color/fit_silver"
+                            app:chipBackgroundColor="@color/fit_card_background" />
+                    </com.google.android.material.chip.ChipGroup>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(opcional)"
+                        android:textColor="@color/fit_silver"
+                        android:textSize="13sp"
+                        android:layout_marginTop="12dp" />
+                </LinearLayout>
+            </ScrollView>
+
+            <Button
+                android:id="@+id/btnSiguienteHorario"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Siguiente"
+                android:textColor="@color/fit_white"
+                android:backgroundTint="@color/fit_primary_blue" />
+        </LinearLayout>
+
+        <!-- ========================================= -->
+        <!-- PASO 4: PESO Y ESTATURA                   -->
+        <!-- ========================================= -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="¿Cuál es tu peso y altura actuales?"
+                        android:textColor="@color/fit_white"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="24dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Peso actual (kg)"
+                        android:textColor="@color/fit_white"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <EditText
+                        android:id="@+id/etPesoKg"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:background="@color/fit_card_background"
+                        android:hint="00.0"
+                        android:textColorHint="@color/fit_silver"
+                        android:textColor="@color/fit_white"
+                        android:inputType="numberDecimal"
+                        android:paddingHorizontal="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(opcional)"
+                        android:textColor="@color/fit_silver"
+                        android:textSize="13sp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Altura (cm)"
+                        android:textColor="@color/fit_white"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <EditText
+                        android:id="@+id/etAlturaCm"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:background="@color/fit_card_background"
+                        android:hint="000"
+                        android:textColorHint="@color/fit_silver"
+                        android:textColor="@color/fit_white"
+                        android:inputType="number"
+                        android:paddingHorizontal="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(opcional)"
+                        android:textColor="@color/fit_silver"
+                        android:textSize="13sp"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </ScrollView>
+
+            <Button
+                android:id="@+id/btnSiguienteMedidas"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Siguiente"
+                android:textColor="@color/fit_white"
+                android:backgroundTint="@color/fit_primary_blue" />
+        </LinearLayout>
+
+        <!-- ========================================= -->
+        <!-- PASO 5: SALUD / ENFERMEDAD (CUADROS)      -->
+        <!-- ========================================= -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="¿Tienes alguna característica física o de salud que debamos tener en cuenta?"
+                        android:textColor="@color/fit_white"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="20dp" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupSalud"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:singleSelection="false"
+                        app:chipSpacingVertical="8dp">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipDiscapacidad"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="DISCAPACIDAD"
+                            android:textColor="@color/fit_silver"
+                            app:chipBackgroundColor="@color/fit_card_background" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipLesion"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="LESIÓN"
+                            android:textColor="@color/fit_silver"
+                            app:chipBackgroundColor="@color/fit_card_background" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipEnfermedad"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ENFERMEDAD"
+                            android:textColor="@color/fit_silver"
+                            app:chipBackgroundColor="@color/fit_card_background" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipEmbarazo"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="EMBARAZO"
+                            android:textColor="@color/fit_silver"
+                            app:chipBackgroundColor="@color/fit_card_background" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipOtras"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="OTRAS"
+                            android:textColor="@color/fit_silver"
+                            app:chipBackgroundColor="@color/fit_card_background" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipNoPoseo"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="NO POSEO"
+                            android:textColor="@color/fit_silver"
+                            app:chipBackgroundColor="@color/fit_card_background" />
+                    </com.google.android.material.chip.ChipGroup>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(opcional)"
+                        android:textColor="@color/fit_silver"
+                        android:textSize="13sp"
+                        android:layout_marginTop="12dp" />
+                </LinearLayout>
+            </ScrollView>
+
+            <Button
+                android:id="@+id/btnSiguienteSalud"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Siguiente"
+                android:textColor="@color/fit_white"
+                android:backgroundTint="@color/fit_primary_blue" />
+        </LinearLayout>
+
+        <!-- ========================================= -->
+        <!-- PASO 6: CONFIRMACIÓN DE DATOS             -->
+        <!-- ========================================= -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Confirma tus respuestas"
+                        android:textColor="@color/fit_white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OBJETIVO"
+                        android:textColor="@color/fit_primary_blue"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvResumenObjetivo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        android:textColor="@color/fit_silver"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HISTORIAL DE ENTRENAMIENTO"
+                        android:textColor="@color/fit_primary_blue"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvResumenHistorial"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        android:textColor="@color/fit_silver"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HORA DE ENTRENAMIENTO"
+                        android:textColor="@color/fit_primary_blue"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvResumenHorario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        android:textColor="@color/fit_silver"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PESO Y ALTURA"
+                        android:textColor="@color/fit_primary_blue"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvResumenMedidas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        android:textColor="@color/fit_silver"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CARACTERÍSTICA DE SALUD O FÍSICA"
+                        android:textColor="@color/fit_primary_blue"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvResumenSalud"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        android:textColor="@color/fit_silver"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="20dp" />
+                </LinearLayout>
+            </ScrollView>
+
+            <Button
+                android:id="@+id/btnConfirmarRespuestas"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="CONFIRMAR"
+                android:textColor="@color/fit_white"
+                android:backgroundTint="@color/fit_primary_blue"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/btnCambiarRespuestas"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="CAMBIAR RESPUESTAS"
+                android:textColor="@color/fit_silver"
+                android:backgroundTint="@color/fit_card_background" />
+        </LinearLayout>
+
+    </ViewFlipper>
+</LinearLayout>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fit_dark_background"
+    android:fillViewport="true"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="ENTRENAMIENTO SUGERIDO"
+            android:textColor="@color/fit_silver"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.08"
+            android:layout_marginBottom="24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Entrenemos?"
+            android:textColor="@color/fit_white"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Aquí está nuestra sugerencia de entrenamiento elaborada para tu perfil:"
+            android:textColor="@color/fit_silver"
+            android:textSize="15sp" />
+
+        <!-- Etiquetas de enfoque -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/tvTagObjetivo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/fit_card_background"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="6dp"
+                android:text="Pérdida de Peso"
+                android:textColor="@color/fit_primary_blue"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="10dp" />
+
+            <TextView
+                android:id="@+id/tvTagEnfoque"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/fit_card_background"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="6dp"
+                android:text="Cuerpo Completo"
+                android:textColor="@color/fit_silver"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvFrecuenciaIdeal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Ideal según tu historial reciente"
+            android:textColor="@color/fit_silver"
+            android:textSize="14sp" />
+
+        <!-- Tarjeta principal de rutina sugerida -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardRutinaSugerida"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/fit_card_background"
+            app:cardCornerRadius="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/tvLetraRutina"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="A"
+                    android:textColor="@color/fit_primary_blue"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="14dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvNombreRutinaSugerida"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Funcionales"
+                        android:textColor="@color/fit_white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvDetalleRutinaSugerida"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="30 min · 6 ejercicios"
+                        android:textColor="@color/fit_silver"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=">"
+                    android:textColor="@color/fit_primary_blue"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnMeGustaEntrenemos"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="28dp"
+            android:backgroundTint="@color/fit_primary_blue"
+            android:text="¡Me gusta! ¡Entrenemos!"
+            android:textColor="@color/fit_white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnVerOtrasRutinas"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/fit_dark_background"
+            android:text="Ver otros"
+            android:textColor="@color/fit_silver" />
+
+    </LinearLayout>
+</ScrollView>
